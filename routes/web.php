@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAuthenticationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// Route cho admin
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::get('login', [AdminAuthenticationController::class, 'showLogin'])->name('login');
+});
