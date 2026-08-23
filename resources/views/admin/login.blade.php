@@ -1,6 +1,6 @@
 <h2 class="text-center">Login Admin</h2>
 <div class="login-admin">
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('admin.login.submit') }}">
         @csrf
         <input type="email" name="email" placeholder="Nhập email" value="{{ old('email') }}">
         <input type="password" name="password" placeholder="Mật khẩu">

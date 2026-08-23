@@ -23,4 +23,8 @@ require __DIR__.'/auth.php';
 // Route cho admin
 Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('login', [AdminAuthenticationController::class, 'showLogin'])->name('login');
+    Route::post('login', [AdminAuthenticationController::class, 'login'])->name('login.submit');
+
+    Route::get('dashboard', [AdminAuthenticationController::class, 'index'])->name('dashboard');
+    Route::get('logout', [AdminAuthenticationController::class, 'logout'])->name('logout');
 });
